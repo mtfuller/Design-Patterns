@@ -10,33 +10,33 @@ namespace DesignPatternLibrary
     {
         static void Main(string[] args)
         {
-            // 
+            // Factory Method Example
             Console.WriteLine("Factory Method:");
             var factory = new ConcreteProductFactory() as Factory;
             var prod1 = factory.getConcreteProduct("Product1");
             var prod2 = factory.getConcreteProduct("Product2");
             Console.WriteLine(prod2);
 
-            // 
+            // Abstract Factory Example
             Console.WriteLine("\nAbstract Factory:");
             var factory1 = new ConcreteFactory1() as AbstractFactory;
             var prodA = factory1.CreateProductA();
             var prodB = factory1.CreateProductB();
             Console.WriteLine("Products:" + prodA + " & " + prodB);
 
-            // 
+            // Singleton Example
             Console.WriteLine("\nSingleton:");
             var singleton = Singleton.Instance;
             Console.WriteLine(singleton);
             Console.WriteLine("Singleton has only one instance: " + (singleton == Singleton.Instance));
 
-            // 
+            // Decorator Example
             Console.WriteLine("\nDecorator:");
             var myComponent = new ConcreteComponent() as Component;
             myComponent = new ConcreteDecorator(myComponent);
             myComponent.Operation();
 
-            // 
+            // Iterator Example
             Console.WriteLine("\nIterators:");
             var arrayAggregate = new ArrayAggregate();
             Iterator iter = arrayAggregate.CreateIterator();
@@ -51,7 +51,7 @@ namespace DesignPatternLibrary
                 Console.Write(iter.Next() + " ");
 
 
-            // 
+            // Observer Example
             Console.WriteLine("\n\nObserver:");
             var subject = new ConcreteSubject();
             subject.Attach(new ConcreteObserver());

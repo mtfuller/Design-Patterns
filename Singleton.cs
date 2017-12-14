@@ -14,9 +14,6 @@ namespace DesignPatternLibrary
                     return _instance;
                 }
         }
-        public Singleton()
-        {
-
-        }
+        private Singleton() { }
     }
 }
